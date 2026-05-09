@@ -44,10 +44,76 @@ This web application displays lists of board games and their reviews. While anyo
 
 ## How to Run
 
+### Prerequisites
+- Java 11 or higher
+- Maven 3.6+ or Docker
+
+### Running with Maven
+
 1. Clone the repository
-2. Open the project in your IDE of choice
+   ```bash
+   git clone <repository-url>
+   cd Boardgame
+   ```
+
+2. Build the project
+   ```bash
+   mvn clean install
+   ```
+
 3. Run the application
-4. To use initial user data, use the following credentials.
-  - username: bugs    |     password: bunny (user role)
-  - username: daffy   |     password: duck  (manager role)
-5. You can also sign-up as a new user and customize your role to play with the application! 😊
+   ```bash
+   mvn spring-boot:run
+   ```
+   Or run the packaged JAR:
+   ```bash
+   mvn package
+   java -jar target/database_service_project-0.0.5-SNAPSHOT.jar
+   ```
+
+4. Access the application at: `http://localhost:8080`
+
+5. H2 Database Console is available at: `http://localhost:8080/h2-console`
+   - JDBC URL: `jdbc:h2:mem:testdb`
+   - Username: `sa`
+   - Password: (empty)
+
+### Running with Docker
+
+1. Build the Docker image
+   ```bash
+   docker build -t boardgame-app .
+   ```
+
+2. Run the container
+   ```bash
+   docker run -p 8080:8080 boardgame-app
+   ```
+
+### Test Commands
+
+- Run all tests:
+  ```bash
+  mvn test
+  ```
+
+- Run tests with code coverage:
+  ```bash
+  mvn clean test jacoco:report
+  ```
+
+- Skip tests during build:
+  ```bash
+  mvn clean install -DskipTests
+  ```
+
+### Initial User Credentials
+
+After running the application, use these credentials:
+
+| Username | Password | Role |
+|----------|----------|------|
+| bugs | bunny | user |
+| daffy | duck | manager |
+
+You can also sign up as a new user and customize your role to explore the application!
