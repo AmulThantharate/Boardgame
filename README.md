@@ -109,7 +109,6 @@ This web application displays lists of board games and their reviews. While anyo
 
 ### Initial User Credentials
 
-After running the application, use these credentials:
 
 | Username | Password | Role |
 |----------|----------|------|
