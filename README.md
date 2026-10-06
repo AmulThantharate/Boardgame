@@ -115,5 +115,3 @@ After running the application, use these credentials:
 |----------|----------|------|
 | bugs | bunny | user |
 | daffy | duck | manager |
-
-You can also sign up as a new user and customize your role to explore the application!
