@@ -105,7 +105,6 @@ This web application displays lists of board games and their reviews. While anyo
 - Skip tests during build:
   ```bash
   mvn clean install -DskipTests
-  ```
 
 ### Initial User Credentials
 
